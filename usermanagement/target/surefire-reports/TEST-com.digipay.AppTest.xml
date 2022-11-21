@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.digipay.AppTest" time="0.018" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="18"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/test-classes:/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/classes:/home/amir/.m2/repository/org/hibernate/orm/hibernate-core/6.1.5.Final/hibernate-core-6.1.5.Final.jar:/home/amir/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.0.0/jakarta.persistence-api-3.0.0.jar:/home/amir/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.0/jakarta.transaction-api-2.0.0.jar:/home/amir/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/home/amir/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.2.Final/hibernate-commons-annotations-6.0.2.Final.jar:/home/amir/.m2/repository/org/jboss/jandex/2.4.2.Final/jandex-2.4.2.Final.jar:/home/amir/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/amir/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/amir/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.1/jakarta.xml.bind-api-3.0.1.jar:/home/amir/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/amir/.m2/repository/org/glassfish/jaxb/jaxb-runtime/3.0.2/jaxb-runtime-3.0.2.jar:/home/amir/.m2/repository/org/glassfish/jaxb/jaxb-core/3.0.2/jaxb-core-3.0.2.jar:/home/amir/.m2/repository/org/glassfish/jaxb/txw2/3.0.2/txw2-3.0.2.jar:/home/amir/.m2/repository/com/sun/istack/istack-commons-runtime/4.0.1/istack-commons-runtime-4.0.1.jar:/home/amir/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.0/jakarta.inject-api-2.0.0.jar:/home/amir/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/home/amir/.m2/repository/com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar:/home/amir/.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar:/home/amir/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/amir/.m2/repository/ch/qos/logback/logback-classic/1.4.4/logback-classic-1.4.4.jar:/home/amir/.m2/repository/ch/qos/logback/logback-core/1.4.4/logback-core-1.4.4.jar:/home/amir/.m2/repository/org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar:/home/amir/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/amir/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="18"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-18-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/surefire/surefirebooter17275562552986430611.jar /home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/surefire 2022-11-21T10-35-35_709-jvmRun1 surefire11586995429448511569tmp surefire_09519236930453211187tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/test-classes:/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/classes:/home/amir/.m2/repository/org/hibernate/orm/hibernate-core/6.1.5.Final/hibernate-core-6.1.5.Final.jar:/home/amir/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.0.0/jakarta.persistence-api-3.0.0.jar:/home/amir/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.0/jakarta.transaction-api-2.0.0.jar:/home/amir/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/home/amir/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.2.Final/hibernate-commons-annotations-6.0.2.Final.jar:/home/amir/.m2/repository/org/jboss/jandex/2.4.2.Final/jandex-2.4.2.Final.jar:/home/amir/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/amir/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/amir/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.1/jakarta.xml.bind-api-3.0.1.jar:/home/amir/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/amir/.m2/repository/org/glassfish/jaxb/jaxb-runtime/3.0.2/jaxb-runtime-3.0.2.jar:/home/amir/.m2/repository/org/glassfish/jaxb/jaxb-core/3.0.2/jaxb-core-3.0.2.jar:/home/amir/.m2/repository/org/glassfish/jaxb/txw2/3.0.2/txw2-3.0.2.jar:/home/amir/.m2/repository/com/sun/istack/istack-commons-runtime/4.0.1/istack-commons-runtime-4.0.1.jar:/home/amir/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.0/jakarta.inject-api-2.0.0.jar:/home/amir/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/home/amir/.m2/repository/com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar:/home/amir/.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar:/home/amir/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/amir/.m2/repository/ch/qos/logback/logback-classic/1.4.4/logback-classic-1.4.4.jar:/home/amir/.m2/repository/ch/qos/logback/logback-core/1.4.4/logback-core-1.4.4.jar:/home/amir/.m2/repository/org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar:/home/amir/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/amir/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/amir"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-07-19"/>
+    <property name="java.home" value="/usr/lib/jvm/java-18-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement/target/surefire/surefirebooter17275562552986430611.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="18.0.2+0"/>
+    <property name="user.name" value="amir"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.15.72-1-MANJARO"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/amir/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="idea.version" value="2020.3.2"/>
+    <property name="java.version" value="18.0.2"/>
+    <property name="user.dir" value="/home/amir/Downloads/usermanagement_33a41617-7a9c-4472-8f70-6664aa31b2e5/usermanagement"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="N/A"/>
+    <property name="java.vm.version" value="18.0.2+0"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="62.0"/>
+  </properties>
+  <testcase name="shouldAnswerWithTrue" classname="com.digipay.AppTest" time="0.002"/>
+</testsuite>

@@ -1,0 +1,10 @@
+com/digipay/usermanagement/service/RoleCrud.class
+com/digipay/usermanagement/model/entity/BaseEntity.class
+com/digipay/usermanagement/service/PermissionCrudImpl.class
+com/digipay/usermanagement/service/UserCrud.class
+com/digipay/usermanagement/service/BaseService.class
+com/digipay/usermanagement/model/entity/Role.class
+com/digipay/usermanagement/model/entity/Permission.class
+com/digipay/usermanagement/model/entity/User.class
+com/digipay/usermanagement/service/PermissionCrud.class
+com/digipay/usermanagement/App.class
