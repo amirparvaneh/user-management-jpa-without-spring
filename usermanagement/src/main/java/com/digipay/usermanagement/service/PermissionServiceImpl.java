@@ -8,6 +8,12 @@ import java.util.Optional;
 
 public class PermissionServiceImpl implements PermissionCrud {
 
+//    private PermissionRepository permissionRepository;
+//
+//    public PermissionServiceImpl(PermissionRepository permissionRepository){
+//        this.permissionRepository = permissionRepository;
+//    }
+
     @Override
     public void save(Permission permission) {
         PermissionRepository permissionRepository = new PermissionRepository();

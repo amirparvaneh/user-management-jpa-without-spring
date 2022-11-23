@@ -6,16 +6,23 @@ import com.digipay.usermanagement.repository.UserRepoImpl;
 import java.util.List;
 import java.util.Optional;
 
-public class UserCrudImpl implements UserCrud{
+public class UserServiceImpl implements UserCrud{
+
+    private UserRepoImpl userRepo;
+
+    public UserServiceImpl(UserRepoImpl userRepo){
+        this.userRepo = userRepo;
+    }
 
     @Override
     public void save(User user) {
-        UserRepoImpl userRepo = new UserRepoImpl();
+        //UserRepoImpl userRepo = new UserRepoImpl();
         userRepo.save(user);
     }
 
     @Override
     public String delete(Long id) {
+
         return null;
     }
 
