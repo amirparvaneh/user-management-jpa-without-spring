@@ -25,7 +25,9 @@ public class RoleServiceImpl implements RoleCrud{
 
     @Override
     public List<Role> findAll() {
-        return null;
+        RoleRepoImpl roleRepo = new RoleRepoImpl();
+        List<Role> roles = roleRepo.findAll();
+        return roles;
     }
 
     @Override

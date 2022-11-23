@@ -72,6 +72,8 @@ public class App {
                     case 3: {
                     }
                     case 4: {
+                        List<Role> roles = new ArrayList<>();
+                        roles = roleService.findAll();
                     }
                 }
             }
