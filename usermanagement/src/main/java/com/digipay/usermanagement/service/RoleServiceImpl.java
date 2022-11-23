@@ -6,7 +6,7 @@ import com.digipay.usermanagement.repository.RoleRepoImpl;
 import java.util.List;
 import java.util.Optional;
 
-public class RoleCrudImpl implements RoleCrud{
+public class RoleServiceImpl implements RoleCrud{
     @Override
     public void save(Role role) {
         RoleRepoImpl roleRepo = new RoleRepoImpl();
