@@ -14,11 +14,11 @@ import java.util.Optional;
 
 public class RoleRepoImpl implements RoleRepo {
 
-    public static final EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+    //public static final EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
 
     @Override
     public void save(Role role) {
-//        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(role);
@@ -43,8 +43,8 @@ public class RoleRepoImpl implements RoleRepo {
 
     @Override
     public List<Role> findAll() {
-        //EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
-        List<Role> roles = new ArrayList<>();
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        List<Role> roles;
         try {
             Query query = entityManager.createQuery("select role from Role role");
             roles = query.getResultList();
