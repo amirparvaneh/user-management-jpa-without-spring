@@ -13,7 +13,7 @@ import org.hibernate.HibernateException;
 import java.util.List;
 import java.util.Optional;
 
-public class PermissionRepository implements PermissionRepo {
+public class PermissionRepositoryImpl implements PermissionRepo {
 
     @Override
     public void save(Permission permission) {

@@ -1,7 +1,7 @@
 package com.digipay.usermanagement.service;
 
 import com.digipay.usermanagement.model.entity.Permission;
-import com.digipay.usermanagement.repository.PermissionRepository;
+import com.digipay.usermanagement.repository.PermissionRepositoryImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,14 +16,14 @@ public class PermissionServiceImpl implements PermissionCrud {
 
     @Override
     public void save(Permission permission) {
-        PermissionRepository permissionRepository = new PermissionRepository();
-        permissionRepository.save(permission);
+        PermissionRepositoryImpl permissionRepositoryImpl = new PermissionRepositoryImpl();
+        permissionRepositoryImpl.save(permission);
     }
 
     @Override
     public String delete(Long id) {
-        PermissionRepository permissionRepository = new PermissionRepository();
-        permissionRepository.deleteById(id);
+        PermissionRepositoryImpl permissionRepositoryImpl = new PermissionRepositoryImpl();
+        permissionRepositoryImpl.deleteById(id);
         String resultMessage = id + " have been deleted";
         return resultMessage;
     }
@@ -38,22 +38,22 @@ public class PermissionServiceImpl implements PermissionCrud {
 
     @Override
     public List<Permission> findAll() {
-        PermissionRepository permissionRepository = new PermissionRepository();
-        List<Permission> all = permissionRepository.findAll();
+        PermissionRepositoryImpl permissionRepositoryImpl = new PermissionRepositoryImpl();
+        List<Permission> all = permissionRepositoryImpl.findAll();
         return all;
     }
 
     @Override
     public void deleteById(Long id) {
-        PermissionRepository permissionRepository = new PermissionRepository();
-        permissionRepository.deleteById(id);
+        PermissionRepositoryImpl permissionRepositoryImpl = new PermissionRepositoryImpl();
+        permissionRepositoryImpl.deleteById(id);
     }
 
     @Override
     public Permission findById(Long id) {
         Permission permission = new Permission();
-        PermissionRepository permissionRepository = new PermissionRepository();
-        permission = permissionRepository.findById(id);
+        PermissionRepositoryImpl permissionRepositoryImpl = new PermissionRepositoryImpl();
+        permission = permissionRepositoryImpl.findById(id);
         return permission;
     }
 }
