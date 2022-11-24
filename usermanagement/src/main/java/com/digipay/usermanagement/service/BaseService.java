@@ -13,4 +13,6 @@ public interface BaseService<T> {
     List<T> findAll();
 
     void deleteById(Long id);
+
+    T findById(Long id);
 }

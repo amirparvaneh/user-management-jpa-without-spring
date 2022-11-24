@@ -1,6 +1,7 @@
 package com.digipay.usermanagement;
 
 
+import ch.qos.logback.classic.Logger;
 import com.digipay.usermanagement.model.entity.Permission;
 import com.digipay.usermanagement.model.entity.Role;
 import com.digipay.usermanagement.service.PermissionServiceImpl;
@@ -14,6 +15,7 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter an operation ? ");
@@ -32,7 +34,9 @@ public class App {
 
                     }
                     case 3: {
+
                     }
+
                     case 4: {
                     }
                 }
@@ -49,7 +53,7 @@ public class App {
                         PermissionServiceImpl permissionService = new PermissionServiceImpl();
                         List<Permission> permissions = permissionService.findAll();
                         for (Permission permission : permissions) {
-                            System.out.println(permission.getId() + "##" + permission.getTitle());
+                            System.out.println(permission.getId() + " -> " + permission.getTitle());
                         }
                         String inputPermission = scanner.next();
                         String[] split = inputPermission.split(",");
@@ -68,13 +72,26 @@ public class App {
                         roleService.save(role);
                     }
                     case 2: {
-
+                        System.out.println("Enter Role Id for deleting : ");
+                        Long roleId = scanner.nextLong();
+                        Role role = roleService.findById(roleId);
+                        roleService.delete(roleId);
+                        System.out.println(role.getTitle() + " have been deleted ");
                     }
                     case 3: {
+                        System.out.println("Enter Role Id for updating : ");
+                        Long roleId = scanner.nextLong();
+                        Role role = roleService.findById(roleId);
+                        System.out.println("Enter new title for ");
+                        String newRoleTitle = scanner.next();
+                        role.setTitle(newRoleTitle);
+
                     }
                     case 4: {
+                        System.out.println("below are role list : ");
                         List<Role> roles = new ArrayList<>();
                         roles = roleService.findAll();
+                        roles.stream().forEach(a -> System.out.println(a.getTitle()));
                     }
                 }
             }
@@ -92,13 +109,19 @@ public class App {
                         permissionService.save(permission);
                     }
                     case 2: {
-
+                        System.out.println("Enter permission ID : ");
+                        Long permissionId = scanner.nextLong();
+                        permissionService.deleteById(permissionId);
+                        System.out.println("permission with id : " + permissionId + " have been deleted");
                     }
                     case 3: {
-
+                        System.out.println();
                     }
                     case 4: {
-
+                        System.out.println("below are permission list : ");
+                        List<Permission> permissionList = new ArrayList<>();
+                        permissionList = permissionService.findAll();
+                        permissionList.stream().forEach(a -> System.out.println(a.getTitle()));
                     }
                 }
             }

@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserCrud{
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public User findById(Long id) {
+        return null;
+    }
 }

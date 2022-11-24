@@ -41,4 +41,9 @@ public class UserRepoImpl implements UserRepo {
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public User findById(Long id) {
+        return null;
+    }
 }

@@ -22,12 +22,18 @@ public class PermissionServiceImpl implements PermissionCrud {
 
     @Override
     public String delete(Long id) {
-        return null;
+        PermissionRepository permissionRepository = new PermissionRepository();
+        permissionRepository.deleteById(id);
+        String resultMessage = id + " have been deleted";
+        return resultMessage;
     }
 
     @Override
     public Optional<Permission> update(Long id, Permission permission) {
-        return Optional.empty();
+        Optional<Permission> permissionLast = Optional.of(new Permission());
+        permissionLast = Optional.ofNullable(findById(id));
+        permissionLast.get().setTitle(permission.getTitle());
+        return permissionLast;
     }
 
     @Override
@@ -39,6 +45,15 @@ public class PermissionServiceImpl implements PermissionCrud {
 
     @Override
     public void deleteById(Long id) {
+        PermissionRepository permissionRepository = new PermissionRepository();
+        permissionRepository.deleteById(id);
+    }
 
+    @Override
+    public Permission findById(Long id) {
+        Permission permission = new Permission();
+        PermissionRepository permissionRepository = new PermissionRepository();
+        permission = permissionRepository.findById(id);
+        return permission;
     }
 }

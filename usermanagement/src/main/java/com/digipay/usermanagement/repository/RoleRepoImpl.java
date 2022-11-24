@@ -60,4 +60,9 @@ public class RoleRepoImpl implements RoleRepo {
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public Role findById(Long id) {
+        return null;
+    }
 }

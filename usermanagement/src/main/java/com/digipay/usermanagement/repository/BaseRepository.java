@@ -15,5 +15,6 @@ public interface BaseRepository<T>{
 
     void deleteById(Long id);
 
+    T findById(Long id);
 
 }

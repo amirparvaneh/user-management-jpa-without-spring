@@ -2,10 +2,6 @@ package com.digipay.usermanagement.model.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
-
 
 @Entity
 @Table(name = "user")
