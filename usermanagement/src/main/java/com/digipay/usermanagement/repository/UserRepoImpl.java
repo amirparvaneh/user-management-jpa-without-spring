@@ -18,12 +18,17 @@ public class UserRepoImpl implements UserRepo {
 
     @Override
     public void save(User user) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.getTransaction().begin();
-        entityManager.persist(user);
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(user);
+            entityManager.remove(user);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            throw new HibernateException(e.getMessage());
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
@@ -35,7 +40,18 @@ public class UserRepoImpl implements UserRepo {
 
     @Override
     public Optional<User> update(Long id, User user) {
-        return Optional.empty();
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(user);
+            entityManager.getTransaction().commit();
+            Optional<User> result = Optional.ofNullable(findById(id));
+            return result;
+        } catch (Exception e) {
+            throw new HibernateException(e.getMessage());
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
