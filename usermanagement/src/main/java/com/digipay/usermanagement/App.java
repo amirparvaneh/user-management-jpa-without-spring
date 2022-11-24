@@ -4,13 +4,16 @@ package com.digipay.usermanagement;
 import ch.qos.logback.classic.Logger;
 import com.digipay.usermanagement.model.entity.Permission;
 import com.digipay.usermanagement.model.entity.Role;
+import com.digipay.usermanagement.model.entity.User;
 import com.digipay.usermanagement.service.PermissionServiceImpl;
 import com.digipay.usermanagement.service.RoleServiceImpl;
+import com.digipay.usermanagement.service.UserServiceImpl;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class App {
 
@@ -23,11 +26,24 @@ public class App {
         Integer inputOperation = scanner.nextInt();
         switch (inputOperation) {
             case 1: {
+                UserServiceImpl userService = new UserServiceImpl();
+                RoleServiceImpl roleService = new RoleServiceImpl();
                 System.out.println(" 1 = createUser \n 2 = deleteUser \n 3 = updateUser \n 4 = listAllUser ");
                 Integer userChosen = scanner.nextInt();
                 switch (userChosen) {
                     case 1: {
-
+                        User user = new User();
+                        System.out.println("Enter user name : ");
+                        String name = scanner.next();
+                        System.out.println("Enter user national : ");
+                        Long national = scanner.nextLong();
+                        System.out.println("Enter user Role among the Role below :");
+                        List<Role> roleList = new ArrayList<>();
+                        roleList = roleService.findAll();
+                        roleList.stream().forEach(a -> System.out.println(a.getId() + "-" + a.getTitle()));
+                        Long inputRole = scanner.nextLong();
+                        user.setName(name);
+                        user.setNationalID(national);
                     }
 
                     case 2: {

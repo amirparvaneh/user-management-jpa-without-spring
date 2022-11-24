@@ -8,15 +8,15 @@ import java.util.Optional;
 
 public class UserServiceImpl implements UserCrud{
 
-    private UserRepoImpl userRepo;
-
-    public UserServiceImpl(UserRepoImpl userRepo){
-        this.userRepo = userRepo;
-    }
+//    private UserRepoImpl userRepo;
+//
+//    public UserServiceImpl(UserRepoImpl userRepo){
+//        this.userRepo = userRepo;
+//    }
 
     @Override
     public void save(User user) {
-        //UserRepoImpl userRepo = new UserRepoImpl();
+        UserRepoImpl userRepo = new UserRepoImpl();
         userRepo.save(user);
     }
 
