@@ -2,6 +2,8 @@ package com.digipay.usermanagement.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "user")
@@ -12,6 +14,7 @@ public class User extends BaseEntity {
 
     private Long nationalID;
 
+    private Role role;
 
     public User() {
     }
@@ -34,4 +37,13 @@ public class User extends BaseEntity {
         this.nationalID = nationalID;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }

@@ -41,19 +41,44 @@ public class App {
                         List<Role> roleList = new ArrayList<>();
                         roleList = roleService.findAll();
                         roleList.stream().forEach(a -> System.out.println(a.getId() + "-" + a.getTitle()));
-                        Long inputRole = scanner.nextLong();
+                        Long inputRoleId = scanner.nextLong();
+                        Role role = new Role();
+                        role = roleService.findById(inputRoleId);
                         user.setName(name);
                         user.setNationalID(national);
+                        user.setRole(role);
                     }
 
                     case 2: {
-
+                        System.out.println("Enter User Id for deleting");
+                        Long userInputId = scanner.nextLong();
+                        userService.delete(userInputId);
+                        System.out.println("user" + userInputId + "have been deleted");
                     }
                     case 3: {
-
+                        System.out.println("Enter user Id for updating : ");
+                        Long userInputId = scanner.nextLong();
+                        User user = new User();
+                        user = userService.findById(userInputId);
+                        System.out.println("your updating : "+ user.getName() + "with role : " + "" +
+                                user.getRole());
+                        System.out.println("Enter new User name :");
+                        String newName = scanner.next();
+                        System.out.println("Enter new User Role among the below role ");
+                        List<Role> roleList = new ArrayList<>();
+                        roleList = roleService.findAll();
+                        roleList.stream().forEach(a -> System.out.println(a.getId() + "-" + a.getTitle()));
+                        Long newIdForUpdateUser = scanner.nextLong();
+                        user.setName(newName);
+                        Role role = roleService.findById(newIdForUpdateUser);
+                        user.setRole(role);
+                        userService.update(userInputId,user);
                     }
 
                     case 4: {
+                        System.out.println("below list are all users");
+                        List<User> userList = userService.findAll();
+                        userList.stream().forEach(a -> System.out.println(a+"\n"));
                     }
                 }
             }
