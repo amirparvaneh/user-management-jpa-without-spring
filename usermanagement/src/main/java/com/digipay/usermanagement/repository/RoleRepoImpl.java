@@ -33,7 +33,9 @@ public class RoleRepoImpl implements RoleRepo {
 
     @Override
     public String delete(Long id) {
-        return null;
+        deleteById(id);
+        String resultMessage = "role" + id + "have been deleted";
+        return resultMessage;
     }
 
     @Override
@@ -58,11 +60,30 @@ public class RoleRepoImpl implements RoleRepo {
 
     @Override
     public void deleteById(Long id) {
-
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            Role role = findById(id);
+            entityManager.remove(role);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            throw new HibernateException(e.getMessage());
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
     public Role findById(Long id) {
-        return null;
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try {
+            Query query = entityManager.createQuery("select role from Role role where role.id = :id");
+            Role role = (Role) query.setParameter("id", id).getSingleResult();
+            return role;
+        } catch (Exception e) {
+            throw new HibernateException(e.getMessage());
+        } finally {
+            entityManager.close();
+        }
     }
 }

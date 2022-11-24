@@ -32,7 +32,9 @@ public class PermissionRepository implements PermissionRepo {
 
     @Override
     public String delete(Long id) {
-        return null;
+        deleteById(id);
+        String resultMessage = "permission " + id + "have been deleted";
+        return resultMessage;
     }
 
     @Override
