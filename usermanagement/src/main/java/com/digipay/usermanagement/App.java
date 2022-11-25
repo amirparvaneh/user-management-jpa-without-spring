@@ -13,7 +13,6 @@ import com.digipay.usermanagement.service.UserServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class App {
 
@@ -49,6 +48,7 @@ public class App {
                         user.setNationalID(national);
                         user.setRole(role);
                         userService.save(user);
+                        return;
                     }
 
                     case 2: {
@@ -56,25 +56,27 @@ public class App {
                         Long userInputId = scanner.nextLong();
                         userService.delete(userInputId);
                         System.out.println("user" + userInputId + "have been deleted");
+                        return;
                     }
                     case 3: {
                         System.out.println("Enter user Id for updating : ");
                         Long userInputId = scanner.nextLong();
-                        User user = new User();
+                        User user ;
                         user = userService.findById(userInputId);
                         System.out.println("your updating : "+ user.getName() + "with role : " + "" +
                                 user.getRole());
                         System.out.println("Enter new User name :");
                         String newName = scanner.next();
                         System.out.println("Enter new User Role among the below role ");
-                        List<Role> roleList = new ArrayList<>();
+                        List<Role> roleList;
                         roleList = roleService.findAll();
-                        roleList.stream().forEach(a -> System.out.println(a.getId() + "-" + a.getTitle()));
+                        roleList.stream().forEach(Role::toString);
                         Long newIdForUpdateUser = scanner.nextLong();
                         user.setName(newName);
                         Role role = roleService.findById(newIdForUpdateUser);
                         user.setRole(role);
                         userService.update(userInputId,user);
+                        return;
                     }
 
                     case 4: {
@@ -113,6 +115,7 @@ public class App {
                         role.setPermission(permissionList);
                         role.setTitle(roleTile);
                         roleService.save(role);
+                        return;
                     }
                     case 2: {
                         System.out.println("Enter Role Id for deleting : ");
@@ -120,6 +123,7 @@ public class App {
                         Role role = roleService.findById(roleId);
                         roleService.delete(roleId);
                         System.out.println(role.getTitle() + " have been deleted ");
+                        return;
                     }
                     case 3: {
                         System.out.println("Enter Role Id for updating : ");
@@ -128,13 +132,13 @@ public class App {
                         System.out.println("Enter new title for ");
                         String newRoleTitle = scanner.next();
                         role.setTitle(newRoleTitle);
-
+                        return;
                     }
                     case 4: {
                         System.out.println("below are role list : ");
                         List<Role> roles = new ArrayList<>();
                         roles = roleService.findAll();
-                        roles.stream().forEach(a -> System.out.println(a.getTitle()));
+                        roles.stream().forEach(a -> System.out.println(a.getTitle()+"\n"));
                     }
                 }
             }
@@ -150,21 +154,31 @@ public class App {
                         Permission permission = new Permission();
                         permission.setTitle(title);
                         permissionService.save(permission);
+                        return;
                     }
                     case 2: {
                         System.out.println("Enter permission ID : ");
                         Long permissionId = scanner.nextLong();
                         permissionService.deleteById(permissionId);
                         System.out.println("permission with id : " + permissionId + " have been deleted");
+                        return;
                     }
                     case 3: {
-                        System.out.println();
+                        System.out.println("Enter permission Id : ");
+                        Long inputPermissionId = scanner.nextLong();
+                        System.out.println("Enter new title : ");
+                        String newTitle = scanner.next();
+                        Permission permission = new Permission();
+                        permissionService.save(permission);
+                        System.out.println("permission with id : " + inputPermissionId + "have been updated with new title" +
+                                newTitle);
+                        return;
                     }
                     case 4: {
                         System.out.println("below are permission list : ");
-                        List<Permission> permissionList = new ArrayList<>();
+                        List<Permission> permissionList ;
                         permissionList = permissionService.findAll();
-                        permissionList.stream().forEach(a -> System.out.println(a.getTitle()));
+                        permissionList.stream().forEach(Permission::toString);
                     }
                 }
             }

@@ -52,6 +52,7 @@ public class Role extends BaseEntity{
 
     @Override
     public String toString() {
-        return this.getId() + " -> " + this.title;
+        System.out.println(this.getId() + " -> " + this.title+"\n");
+        return this.getId() + " -> " + this.title+"\n";
     }
 }

@@ -3,7 +3,6 @@ package com.digipay.usermanagement.model.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 
 @Entity
 @Table(name = "permission")
@@ -21,4 +20,10 @@ public class Permission extends BaseEntity {
         this.title = title;
     }
 
+
+    @Override
+    public String toString() {
+        System.out.println(this.title + "\n");
+        return this.title + "\n";
+    }
 }
