@@ -136,7 +136,7 @@ public class App {
                     }
                     case 4: {
                         System.out.println("below are role list : ");
-                        List<Role> roles = new ArrayList<>();
+                        List<Role> roles ;
                         roles = roleService.findAll();
                         roles.stream().forEach(a -> System.out.println(a.getTitle()+"\n"));
                     }
