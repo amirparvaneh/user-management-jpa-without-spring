@@ -4,10 +4,7 @@ import com.digipay.usermanagement.JPAUtil;
 import com.digipay.usermanagement.model.entity.Permission;
 import com.digipay.usermanagement.service.PermissionServiceImpl;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
-import org.hibernate.HibernateError;
 import org.hibernate.HibernateException;
 
 import java.util.List;

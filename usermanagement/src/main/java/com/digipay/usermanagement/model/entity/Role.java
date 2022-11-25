@@ -14,7 +14,7 @@ public class Role extends BaseEntity{
 
 
     @OneToMany
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "role_id")
     private List<User> users;
 
 
@@ -48,5 +48,10 @@ public class Role extends BaseEntity{
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return this.getId() + " -> " + this.title;
     }
 }

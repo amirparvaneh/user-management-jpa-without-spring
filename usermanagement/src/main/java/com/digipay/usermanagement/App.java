@@ -35,18 +35,20 @@ public class App {
                         User user = new User();
                         System.out.println("Enter user name : ");
                         String name = scanner.next();
-                        System.out.println("Enter user national : ");
+                        System.out.println("Enter user nationalID : ");
                         Long national = scanner.nextLong();
                         System.out.println("Enter user Role among the Role below :");
                         List<Role> roleList = new ArrayList<>();
                         roleList = roleService.findAll();
-                        roleList.stream().forEach(a -> System.out.println(a.getId() + "-" + a.getTitle()));
+                        roleList.stream().forEach(Role::toString);
                         Long inputRoleId = scanner.nextLong();
                         Role role = new Role();
-                        role = roleService.findById(inputRoleId);
+//                        role = roleService.findById(inputRoleId);
+                        role.setId(inputRoleId);
                         user.setName(name);
                         user.setNationalID(national);
                         user.setRole(role);
+                        userService.save(user);
                     }
 
                     case 2: {
